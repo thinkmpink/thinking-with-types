@@ -1,0 +1,51 @@
+name:                thinking-with-types
+version:             0.1.0.0
+github:              "thinkmpink/thinking-with-types"
+license:             BSD3
+author:              "Michael Pinkham"
+maintainer:          "mpinkham3@gmail.com"
+copyright:           "Michael Pinkham 2019"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/thinkmpink/thinking-with-types#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  thinking-with-types-exe:
+    main:                Main.lhs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - thinking-with-types
+
+tests:
+  thinking-with-types-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - thinking-with-types
+    - hspec >= 2.7
+    - QuickCheck >= 2.13
+    - test-invariant >= 0.4.5

@@ -1,0 +1,5 @@
+.stack-work/
+thinking-with-types.cabal
+*~
+src/thinking-with-types-sample.pdf
+*.lock
