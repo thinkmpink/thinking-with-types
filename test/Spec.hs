@@ -3,12 +3,6 @@ import Test.QuickCheck
 import Test.Invariant
 import Ch1 (curry', uncurry')
 
--- prop_myZipWith :: Eq c => Fun (a, b) c -> [a] -> [b] -> Bool
--- prop_myZipWith (Fn2 f) x y = myZipWith f x y == zipWith f x y
-
-
--- prop_uncurryInvertsCurry (Fn f) b c = uncurry' (curry' f b c) == f b c
-
 prop_uncurryInvertsCurry :: Fun (Int, Int) Int -> (Int, Int) -> Bool
 prop_uncurryInvertsCurry (Fn f) b = uncurry' (curry' f) b == f b
 
